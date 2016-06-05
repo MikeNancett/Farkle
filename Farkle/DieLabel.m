@@ -9,7 +9,6 @@
 #import "DieLabel.h"
 
 @interface DieLabel () <UIGestureRecognizerDelegate>
-
 @end
 
 @implementation DieLabel 
@@ -38,6 +37,8 @@
 }
 
 -(void)handleTap:(UITapGestureRecognizer *)selector{
+    self.backgroundColor = [UIColor yellowColor];
+    [self.delegate dieLabelTapped: self];
     NSLog(@"Tapped");
 }
 @end

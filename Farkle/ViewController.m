@@ -9,10 +9,14 @@
 #import "ViewController.h"
 #import "DieLabel.h"
 
-@interface ViewController ()
+@interface ViewController () <DieLabelDelegate>
+@property (nonatomic) NSMutableSet<DieLabel *> * dice;
 @end
 
 @implementation ViewController
+- (void)dieLabelTapped:(DieLabel *)tappedLabel {
+    [self.dice addObject:tappedLabel];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -20,7 +24,13 @@
     // NSString *randomNumber = (@"%d", randomNumber);
     //self.label.text = @"%d", random;
     NSLog(@"%d", random);
-
+    self.dice = [NSMutableSet set];
+    for (UIView * subview in self.view.subviews) {
+        if ([subview isKindOfClass:[DieLabel class]]) {
+            DieLabel * label = (DieLabel *)subview;
+            label.delegate = self;
+        }
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -29,10 +39,13 @@
 }
 
 - (IBAction)onRollButtonPressed:(UIButton *)sender {
+
     for (UIView * subview in self.view.subviews) {
         if ([subview isKindOfClass:[DieLabel class]]) {
             DieLabel * label = (DieLabel *)subview;
-            [label rollDie];
+            if (NO == [self.dice containsObject: label]) {
+                [label rollDie];
+            }
         }
     }
 }
