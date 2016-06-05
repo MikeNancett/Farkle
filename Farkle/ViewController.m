@@ -10,10 +10,6 @@
 #import "DieLabel.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet DieLabel *dieLabel;
-@property (strong, nonatomic) IBOutletCollection(DieLabel) NSArray *labels;
-
-
 @end
 
 @implementation ViewController
@@ -27,14 +23,18 @@
 
 }
 
-- (IBAction)onRollButtonPressed:(UIButton *)sender {
-    for (DieLabel *label in self.labels){
-        [label rollDie];
-//        self.dieLabel.text = [NSString stringWithFormat:@"%d",]
-    }
-    
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+//    [self onRollButtonPressed: nil];
 }
 
-
+- (IBAction)onRollButtonPressed:(UIButton *)sender {
+    for (UIView * subview in self.view.subviews) {
+        if ([subview isKindOfClass:[DieLabel class]]) {
+            DieLabel * label = (DieLabel *)subview;
+            [label rollDie];
+        }
+    }
+}
 
 @end

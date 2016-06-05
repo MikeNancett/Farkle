@@ -14,13 +14,5 @@
 @end
 
 @interface DieLabel : UILabel 
-@property DieLabel *label;
-
-//-(void)onDieLabelPressed:(UILabel *)label;
-
 -(void)rollDie;
-    
-
-
-
 @end

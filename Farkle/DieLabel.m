@@ -12,9 +12,7 @@
 
 @end
 
-
 @implementation DieLabel 
-
 
 
 - (id) initWithCoder:(NSCoder *)aDecoder {
@@ -29,15 +27,13 @@
     //number of fingers required
     tap.numberOfTouchesRequired = 1;
     
-    
     return self;
-    
 }
 
 -(void)rollDie{
-    int random = arc4random() % 6 + 1;
+    const int random = rand() % 6 + 1;
+    self.text = [NSString stringWithFormat:@"%d", random];
     
-    self.label.text = [NSString stringWithFormat:@"%d", random];
     NSLog(@"%d", random);
 }
 
