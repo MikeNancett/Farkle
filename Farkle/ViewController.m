@@ -39,15 +39,17 @@
 }
 
 - (IBAction)onRollButtonPressed:(UIButton *)sender {
-
+    unsigned totalScore = 0;
     for (UIView * subview in self.view.subviews) {
         if ([subview isKindOfClass:[DieLabel class]]) {
             DieLabel * label = (DieLabel *)subview;
             if (NO == [self.dice containsObject: label]) {
                 [label rollDie];
             }
+            totalScore += label.score;
         }
     }
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %u", totalScore];
 }
 
 @end

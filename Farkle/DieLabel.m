@@ -25,15 +25,15 @@
     tap.numberOfTapsRequired = 1;
     //number of fingers required
     tap.numberOfTouchesRequired = 1;
-    
+    self.score = 1;
     return self;
 }
 
 -(void)rollDie{
-    const int random = rand() % 6 + 1;
-    self.text = [NSString stringWithFormat:@"%d", random];
+    self.score = rand() % 6 + 1;
+    self.text = [NSString stringWithFormat:@"%d", self.score];
     
-    NSLog(@"%d", random);
+    NSLog(@"%d", self.score);
 }
 
 -(void)handleTap:(UITapGestureRecognizer *)selector{

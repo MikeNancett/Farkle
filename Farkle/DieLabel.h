@@ -14,7 +14,8 @@
 - (void)dieLabelTapped:(DieLabel *)sender;
 @end
 
-@interface DieLabel : UILabel 
+@interface DieLabel : UILabel
+@property (nonatomic) unsigned score;
 @property (nonatomic, weak) id<DieLabelDelegate> delegate;
 -(void)rollDie;
 @end
