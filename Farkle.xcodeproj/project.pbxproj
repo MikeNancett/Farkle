@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F398D201D03273B006578E2 /* DieLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F398D1F1D03273B006578E2 /* DieLabel.m */; };
 		5F9043991D0325B7009B82D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9043981D0325B7009B82D2 /* main.m */; };
 		5F90439C1D0325B7009B82D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F90439B1D0325B7009B82D2 /* AppDelegate.m */; };
 		5F90439F1D0325B7009B82D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F90439E1D0325B7009B82D2 /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F398D1E1D03273B006578E2 /* DieLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DieLabel.h; sourceTree = "<group>"; };
+		5F398D1F1D03273B006578E2 /* DieLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DieLabel.m; sourceTree = "<group>"; };
 		5F9043941D0325B7009B82D2 /* Farkle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Farkle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9043981D0325B7009B82D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F90439A1D0325B7009B82D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,9 +65,11 @@
 				5F90439B1D0325B7009B82D2 /* AppDelegate.m */,
 				5F90439D1D0325B7009B82D2 /* ViewController.h */,
 				5F90439E1D0325B7009B82D2 /* ViewController.m */,
+				5F398D1E1D03273B006578E2 /* DieLabel.h */,
+				5F398D1F1D03273B006578E2 /* DieLabel.m */,
 				5F9043A01D0325B7009B82D2 /* Main.storyboard */,
-				5F9043A31D0325B7009B82D2 /* Assets.xcassets */,
 				5F9043A51D0325B7009B82D2 /* LaunchScreen.storyboard */,
+				5F9043A31D0325B7009B82D2 /* Assets.xcassets */,
 				5F9043A81D0325B7009B82D2 /* Info.plist */,
 				5F9043971D0325B7009B82D2 /* Supporting Files */,
 			);
@@ -152,6 +157,7 @@
 				5F90439F1D0325B7009B82D2 /* ViewController.m in Sources */,
 				5F90439C1D0325B7009B82D2 /* AppDelegate.m in Sources */,
 				5F9043991D0325B7009B82D2 /* main.m in Sources */,
+				5F398D201D03273B006578E2 /* DieLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,10 +269,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Farkle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MyProjects.Farkle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -274,10 +283,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Farkle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MyProjects.Farkle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -300,6 +312,7 @@
 				5F9043AD1D0325B7009B82D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

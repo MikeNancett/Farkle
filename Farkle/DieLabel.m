@@ -8,14 +8,40 @@
 
 #import "DieLabel.h"
 
-@implementation DieLabel
+@interface DieLabel () <UIGestureRecognizerDelegate>
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+@end
+
+
+@implementation DieLabel 
+
+
+
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    
+    self = [super initWithCoder:aDecoder];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTap:)];
+    
+    self.gestureRecognizers = @[tap];
+    //number of taps required
+    tap.numberOfTapsRequired = 1;
+    //number of fingers required
+    tap.numberOfTouchesRequired = 1;
+    
+    
+    return self;
+    
 }
-*/
 
+-(void)rollDie{
+    int random = arc4random() % 6 + 1;
+    
+    self.label.text = [NSString stringWithFormat:@"%d", random];
+    NSLog(@"%d", random);
+}
+
+-(void)handleTap:(UITapGestureRecognizer *)selector{
+    NSLog(@"Tapped");
+}
 @end

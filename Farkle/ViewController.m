@@ -7,8 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "DieLabel.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet DieLabel *dieLabel;
+@property (strong, nonatomic) IBOutletCollection(DieLabel) NSArray *labels;
+
 
 @end
 
@@ -16,12 +20,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    int random = arc4random() % 6 + 1;
+    // NSString *randomNumber = (@"%d", randomNumber);
+    //self.label.text = @"%d", random;
+    NSLog(@"%d", random);
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)onRollButtonPressed:(UIButton *)sender {
+    for (DieLabel *label in self.labels){
+        [label rollDie];
+//        self.dieLabel.text = [NSString stringWithFormat:@"%d",]
+    }
+    
 }
+
+
 
 @end
