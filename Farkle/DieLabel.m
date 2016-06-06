@@ -37,7 +37,6 @@
 }
 
 -(void)handleTap:(UITapGestureRecognizer *)selector{
-    self.backgroundColor = [UIColor yellowColor];
     [self.delegate dieLabelTapped: self];
     NSLog(@"Tapped");
 }

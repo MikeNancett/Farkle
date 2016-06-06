@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+    BOOL isAdditionalTurnAvailable;
+}
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @end
 
